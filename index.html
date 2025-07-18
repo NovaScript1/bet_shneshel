@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مطعم بيت شنيشل في ميسان، نقدم أشهى المأكولات العراقية الأصيلة. أكل طيب وبأجواء تراثية مميزة.">
+    <meta name="keywords" content="مطعم, بيت شنيشل, ميسان, اكل عراقي, مشويات, فطور, غداء, عشاء, بيتزا, دجاج">
+    <title>مطعم بيت شنيشل | أكل طيب في ميسان</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Marhey:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- CSS Global Styles & Variables --- */
+        :root {
+            --primary-color: #c09a69; /* لون ذهبي تراثي */
+            --dark-color: #2c2925;   /* لون بني داكن */
+            --light-color: #f9f6f2;  /* لون بيج فاتح للخلفية */
+            --text-color: #333;
+            --white-color: #ffffff;
+            --header-font: 'Marhey', sans-serif;
+            --body-font: 'Cairo', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            line-height: 1.7;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            /* Security: Disable Text Selection */
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--header-font);
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        /* --- Header & Hero Section --- */
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            min-height: 100vh;
+            color: var(--white-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .logo {
+            max-width: 220px; /* حجم مناسب للشعار */
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--white-color);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        
+        .slogan {
+            font-family: var(--header-font);
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #a98458;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* --- About Us Section --- */
+        #about {
+            background: var(--white-color);
+        }
+        #about .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        #about p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Menu Section --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-category {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .menu-category:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+        }
+
+        .menu-category h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--light-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .menu-item .item-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .menu-item .item-price {
+            color: var(--dark-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+        
+        .price-currency {
+            font-size: 0.8em;
+            margin-right: 3px;
+        }
+        
+        /* --- Contact Section --- */
+        .contact-info {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+        .contact-info p {
+            margin-bottom: 20px;
+        }
+        .contact-info i {
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .contact-info a:hover {
+            color: var(--dark-color);
+        }
+
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 50%; /* Aspect Ratio */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        /* --- Responsive Design for Mobile --- */
+        @media(max-width: 768px) {
+            .slogan { 
+                font-size: 2.5rem; /* تصغير حجم الشعار */
+            }
+            .header h1 { 
+                font-size: 1.8rem; /* تصغير حجم العنوان الرئيسي */
+            }
+            .section-title { 
+                font-size: 2.2rem; /* تصغير حجم عناوين الأقسام */
+            }
+            .menu-category h3 {
+                font-size: 1.6rem;
+            }
+            .contact-info {
+                font-size: 1.1rem;
+            }
+            .about-text, .about-image { 
+                text-align: center; /* توسيط النصوص في قسم "حكايتنا" */
+            }
+            section {
+                padding: 50px 0; /* تقليل الهوامش في الأقسام */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header & Hero Section -->
+    <header class="header" id="home">
+        <div class="container">
+            <img src="https://cdn.discordapp.com/attachments/1047821956344463400/1395635604590432266/Screenshot_--removebg-preview.png?ex=687b2a71&is=6879d8f1&hm=134ef76de426d61929779ad67553476718b3c297326e33f0ac422555c653da73&" alt="شعار مطعم بيت شنيشل" class="logo">
+            <h1>أهلاً وسهلاً في بيتكم الثاني</h1>
+            <p class="slogan">أكل طيب</p>
+            <a href="#menu" class="cta-button">قائمة الطعام <i class="fa-solid fa-utensils"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Us Section -->
+        <section id="about">
+            <div class="container">
+                <div class="about-text">
+                    <h2 class="section-title">حكايتنا</h2>
+                    <p>في قلب ميسان، يفتح "بيت شنيشل" أبوابه ليقدم لكم تجربة فريدة من نوعها، حيث يلتقي التراث العراقي الأصيل مع فنون الطهي الحديثة. نحن نؤمن بأن الطعام ليس مجرد وجبة، بل هو حكاية تجمع الأحبة.</p>
+                    <p>نستخدم أجود المكونات الطازجة ونطهو بحب وشغف لنقدم لكم "أكل طيب" يعيد إليكم دفء وذكريات طعام البيت الأصيل.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/8438634/pexels-photo-8438634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="صورة طبق عراقي شهي">
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu">
+            <div class="container">
+                <h2 class="section-title">قائمة طعامنا</h2>
+                <div class="menu-grid">
+                    <!-- فئة التمن والمرق -->
+                    <div class="menu-category">
+                        <h3><i class="fa-solid fa-bowl-rice"></i> التمن والمرق</h3>
+                        <div class="menu-item"><span class="item-name">صينية تمن ومرق</span><span class="item-price">4,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">صينية تمن ومرق (حجم اكبر)</span><span class="item-price">5,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">صينية تمن ومرق صغير</span><span class="item-price">3,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">صينية تمن ومرق دبل</span><span class="item-price">6,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">تمن وقيمة وسط</span><span class="item-price">6,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">تمن وقيمة كبير</span><span class="item-price">8,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">كيلو تمن وقيمة</span><span class="item-price">12,000<span class="price-currency">د.ع</span></span></div>
+                    </div>
+                    <!-- فئة الدجاج -->
+                    <div class="menu-category">
+                        <h3><i class="fa-solid fa-drumstick-bite"></i> دجاج</h3>
+                        <div class="menu-item"><span class="item-name">دجاج ذبح كبير</span><span class="item-price">10,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">دجاج ذبح نص</span><span class="item-price">5,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">دجاج الكفيل</span><span class="item-price">6,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">اجنحة نفر</span><span class="item-price">7,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">اجنحة نص نفر</span><span class="item-price">5,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">شيش اجنحة</span><span class="item-price">1,500<span class="price-currency">د.ع</span></span></div>
+                    </div>
+                    <!-- فئة غربي -->
+                    <div class="menu-category">
+                        <h3><i class="fa-solid fa-utensils"></i> غربي</h3>
+                        <div class="menu-item"><span class="item-name">كص لحم (لفة)</span><span class="item-price">500<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">كص دجاج (لفة)</span><span class="item-price">2,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">نص لحم كص</span><span class="item-price">3,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">نفر كص لحم</span><span class="item-price">1,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">كص دجاج كيلو</span><span class="item-price">4,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">كص لحم كيلو</span><span class="item-price">6,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">بركر</span><span class="item-price">10,000<span class="price-currency">د.ع</span></span></div>
+                    </div>
+                    <!-- فئة فلافل -->
+                    <div class="menu-category">
+                        <h3><i class="fa-solid fa-seedling"></i> فلافل</h3>
+                        <div class="menu-item"><span class="item-name">فلافل</span><span class="item-price">1,500<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">صينية فلافل صغيرة</span><span class="item-price">1,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">صينية فلافل وسط</span><span class="item-price">6,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">فلافل عدد (10)</span><span class="item-price">12,000<span class="price-currency">د.ع</span></span></div>
+                    </div>
+                    <!-- فئة بيتزا -->
+                     <div class="menu-category">
+                        <h3><i class="fa-solid fa-pizza-slice"></i> بيتزا</h3>
+                        <div class="menu-item"><span class="item-name">بيتزا صغير</span><span class="item-price">2,400<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">بيتزا وسط</span><span class="item-price">3,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">بيتزا كبير</span><span class="item-price">1,500<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">فنكر</span><span class="item-price">1,000<span class="price-currency">د.ع</span></span></div>
+                    </div>
+                    <!-- فئة مشروبات -->
+                    <div class="menu-category">
+                        <h3><i class="fa-solid fa-martini-glass"></i> مشروبات وصاج</h3>
+                         <div class="menu-item"><span class="item-name">مشروبات غازية</span><span class="item-price">2,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">لبن</span><span class="item-price">3,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">بيبسي</span><span class="item-price">4,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">زينكر</span><span class="item-price">500<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">ريزو</span><span class="item-price">1,000<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">صاج ايطالي</span><span class="item-price">500<span class="price-currency">د.ع</span></span></div>
+                        <div class="menu-item"><span class="item-name">صاج دجاج + لحم</span><span class="item-price">1,000<span class="price-currency">د.ع</span></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">تواصلوا معنا</h2>
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-map-marker-alt"></i> العنوان: محافظة ميسان، حي الحسين الجديد، مقابل ساحة الرمل</p>
+                    <p>
+                        <i class="fa-solid fa-phone"></i> للحجز والطلبات: 
+                        <a href="tel:07883373077">07883373077</a> | 
+                        <a href="tel:07726077818">07726077818</a>
+                    </p>
+                     <p>زورونا لتستمتعوا بأطيب الأطباق العراقية الأصيلة!</p>
+                </div>
+                <div class="map-container">
+                    <!-- ملاحظة: تم وضع إحداثيات تقريبية لمركز مدينة العمارة في ميسان. يفضل استبدالها برابط خرائط جوجل الدقيق للمطعم إن وجد -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54233.25732684841!2d47.12139684347209!3d31.83913076166708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fa4495b5a7a8d9f%3A0x6b775438865c2763!2sAmarah%2C%20Maysan%20Governorate%2C%20Iraq!5e0!3m2!1sen!2s!4v1721277865615!5m2!1sen!2s" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 مطعم بيت شنيشل. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Security Script to disable right-click -->
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+
+</body>
+</html>
